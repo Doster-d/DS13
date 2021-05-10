@@ -2,7 +2,7 @@
 
 GLOBAL_VAR(restart_counter)
 
-/var/server_name = "Baystation 12"
+/var/server_name = "Skyline 13"
 
 /var/game_id = null
 /hook/global_init/proc/generate_gameid()
@@ -679,7 +679,7 @@ var/world_topic_spam_protect_time = world.timeofday
 	if(game_id)
 		GLOB.log_directory += "[game_id]"
 	else
-		GLOB.log_directory += "[replacetext(time_stamp(), ":", ".")]"
+		GLOB.log_directory += "[replacetext_char(time_stamp(), ":", ".")]"
 
 	WORLD_SETUP_LOG(runtime)
 	WORLD_SETUP_LOG(qdel)

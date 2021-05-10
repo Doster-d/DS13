@@ -195,15 +195,15 @@ move an amendment</a> to the drawing, or <a href='?src=\ref[src];action=delete_a
 		return
 
 	for(var/obj/machinery/alarm/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.SetName(replacetext_char(M.name,oldtitle,title))
 	for(var/obj/machinery/power/apc/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.SetName(replacetext_char(M.name,oldtitle,title))
 	for(var/obj/machinery/atmospherics/unary/vent_scrubber/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.SetName(replacetext_char(M.name,oldtitle,title))
 	for(var/obj/machinery/atmospherics/unary/vent_pump/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.SetName(replacetext_char(M.name,oldtitle,title))
 	for(var/obj/machinery/door/M in A)
-		M.SetName(replacetext(M.name,oldtitle,title))
+		M.SetName(replacetext_char(M.name,oldtitle,title))
 	//TODO: much much more. Unnamed airlocks, cameras, etc.
 
 /obj/item/blueprints/proc/check_tile_is_border(var/turf/T2,var/dir)

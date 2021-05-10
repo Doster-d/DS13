@@ -23,7 +23,7 @@
 	spawn_announcement_delay = 5000
 
 /datum/antagonist/xenos/Initialize()
-	spawn_announcement = replacetext(GLOB.using_map.unidentified_lifesigns_message, "%STATION_NAME%", station_name())
+	spawn_announcement = replacetext_char(GLOB.using_map.unidentified_lifesigns_message, "%STATION_NAME%", station_name())
 	spawn_announcement_sound = GLOB.using_map.xenomorph_spawn_sound
 	GLOB.xenomorphs = src
 	return ..()

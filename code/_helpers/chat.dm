@@ -53,6 +53,6 @@ In TGS3 it will always be sent to all connected designated game chats.
  * message - The message to send.
  */
 /proc/send2adminchat(category, message)
-	category = replacetext(replacetext(category, "\proper", ""), "\improper", "")
-	message = replacetext(replacetext(message, "\proper", ""), "\improper", "")
+	category = replacetext_char(replacetext_char(category, "\proper", ""), "\improper", "")
+	message = replacetext_char(replacetext_char(message, "\proper", ""), "\improper", "")
 	world.TgsTargetedChatBroadcast("[category] | [message]", TRUE)

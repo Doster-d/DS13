@@ -7,7 +7,7 @@ proc/Intoxicated(phrase)
 	var/newphrase=""
 	var/newletter=""
 	while(counter>=1)
-		newletter=copytext(phrase,(leng-counter)+1,(leng-counter)+2)
+		newletter=copytext_char(phrase,(leng-counter)+1,(leng-counter)+2)
 		if(rand(1,3)==3)
 			if(lowertext(newletter)=="o")	newletter="u"
 			if(lowertext(newletter)=="s")	newletter="ch"
@@ -40,8 +40,8 @@ proc/NewStutter(phrase,stunned)
 		var/index = split_phrase.Find(word) //Find the word in the split phrase so we can replace it.
 
 		//Search for dipthongs (two letters that make one sound.)
-		var/first_sound = copytext(word,1,3)
-		var/first_letter = copytext(word,1,2)
+		var/first_sound = copytext_char(word,1,3)
+		var/first_letter = copytext_char(word,1,2)
 		if(lowertext(first_sound) in list("ch","th","sh"))
 			first_letter = first_sound
 
@@ -101,7 +101,7 @@ proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_spee
 	if(input_size < 20) // Short messages get distorted too. Bit hacksy.
 		distortion += (20-input_size)/2
 	while(length <= input_size)
-		var/newletter=copytext(message, length, length+1)
+		var/newletter=copytext_char(message, length, length+1)
 		if(!prob(distortion_chance))
 			new_message += newletter
 			length += 1
@@ -135,14 +135,14 @@ proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_spee
 					if(english_only)
 						newletter += "*"
 					else
-						newletter = pick("ø", "Ð", "%", "æ", "µ")
+						newletter = pick("ï¿½", "ï¿½", "%", "ï¿½", "ï¿½")
 				distortion += 0.5 * distortion_speed
 			else if(prob(0.75 * distortion)) // Incomprehensible
 				newletter = pick("<", ">", "!", "$", "%", "^", "&", "*", "~", "#")
 				distortion += 0.75 * distortion_speed
 			else if(prob(0.05 * distortion)) // Total cut out
 				if(!english_only)
-					newletter = "¦w¡¼b»%> -BZZT-"
+					newletter = "ï¿½wï¿½ï¿½bï¿½%> -BZZT-"
 				else
 					newletter = "srgt%$hjc< -BZZT-"
 				new_message += newletter
@@ -152,15 +152,15 @@ proc/RadioChat(mob/living/user, message, distortion_chance = 60, distortion_spee
 					if("s")
 						newletter = "$"
 					if("e")
-						newletter = "€"
+						newletter = "ï¿½"
 					if("w")
-						newletter = "ø"
+						newletter = "ï¿½"
 					if("y")
-						newletter = "¡"
+						newletter = "ï¿½"
 					if("x")
-						newletter = "æ"
+						newletter = "ï¿½"
 					if("u")
-						newletter = "µ"
+						newletter = "ï¿½"
 		else
 			if(prob(0.2 * distortion))
 				newletter = " *crackle* "
