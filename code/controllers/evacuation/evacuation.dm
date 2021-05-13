@@ -129,8 +129,8 @@ var/datum/evacuation_controller/evacuation_controller
 		if (GLOB.using_map.emergency_shuttle_docked_message)
 			evac_waiting.Announce(replacetext_char(GLOB.using_map.emergency_shuttle_docked_message, "%ETD%", "[estimated_time] minute\s"), new_sound = sound('sound/effects/Evacuation.ogg', volume = 35))
 	else
-		priority_announcement.Announce(replacetext_char(replacetext_char(GLOB.using_map.shuttle_docked_message, "%dock_name%", "[GLOB.using_map.dock_name]"),  "%ETD%", "[estimated_time] minute\s"))
-	if(config.announce_shuttle_dock_to_irc)
+		priority_announcement.Announce(replacetext(replacetext_char(GLOB.using_map.shuttle_docked_message, "%dock_name%", "[GLOB.using_map.dock_name]"),  "%ETD%", "[estimated_time] minute\s"))
+	if(CONFIG_GET(flag/announce_shuttle_dock_to_irc))
 		send2mainirc("The shuttle has docked with the station. It will depart in approximately [estimated_time] minute\s.")
 
 /datum/evacuation_controller/proc/launch_evacuation()
