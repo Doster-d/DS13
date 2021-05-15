@@ -274,8 +274,8 @@
 	var/opentag = 1 //These store the position of < and > respectively.
 	var/closetag = 1
 	while(1)
-		opentag = findtext(input, "<")
-		closetag = findtext(input, ">")
+		opentag = findtext_char(input, "<")
+		closetag = findtext_char(input, ">")
 		if(closetag && opentag)
 			if(closetag < opentag)
 				input = copytext_char(input, (closetag + 1))
