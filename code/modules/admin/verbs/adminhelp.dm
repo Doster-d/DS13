@@ -57,6 +57,8 @@
 							msg += "</b> "
 							continue
 			msg += "[original_word] "
+		else
+			msg += "[original_word] "
 
 	return msg
 
@@ -64,7 +66,7 @@
 	set category = "Admin"
 	set name = "Adminhelp"
 
-// Select a category
+	// Select a category
 	var/msg
 	var/list/type = list ("Mentors: Gameplay/Job Inquiries", "Mods/Admins: Rule Issue")
 	var/selected_type = input("Pick a category.", "Admin Help", null, null) as null|anything in type
