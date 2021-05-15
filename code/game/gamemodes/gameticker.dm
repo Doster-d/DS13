@@ -54,11 +54,8 @@ var/global/datum/controller/gameticker/ticker
 				master_mode = "extended"
 
 		to_world("<b>Trying to start [master_mode]...</b>")
-		if (CONFIG_GET(flag/auto_start))
-			start_ASAP = TRUE
-		else
-			to_world("<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>")
-			to_world("Please, setup your character and select ready. Game will start in [pregame_timeleft] seconds")
+		to_world("<B><FONT color='blue'>Welcome to the pre-game lobby!</FONT></B>")
+		to_world("Please, setup your character and select ready. Game will start in [pregame_timeleft] seconds")
 
 
 		while(current_state == GAME_STATE_PREGAME)
@@ -148,21 +145,6 @@ var/global/datum/controller/gameticker/ticker
 		CreateModularRecord(H)
 
 	callHook("roundstart")
-
-	//Here we will trigger the auto-observe and auto bst debug things
-	if (CONFIG_GET(flag/auto_observe))
-		for(var/client/C in GLOB.clients)
-			if (C.mob)
-				make_observer(C.mob)
-	spawn(5)
-		if (CONFIG_GET(flag/auto_bst))
-			for(var/client/C in GLOB.clients)
-				if (C.mob)
-					C.cmd_dev_bst(TRUE)
-
-		if (CONFIG_GET(flag/debug_verbs))
-			for(var/client/C in GLOB.clients)
-				C.enable_debug_verbs(TRUE)
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()
