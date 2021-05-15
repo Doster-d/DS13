@@ -38,6 +38,8 @@
 
 /obj/item/weapon/paper/New(loc, text,title)
 	..(loc)
+	Destroy()
+	return
 	set_content(text ? text : info, title)
 
 /obj/item/weapon/paper/proc/set_content(text,title)
