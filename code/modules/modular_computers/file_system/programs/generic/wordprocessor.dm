@@ -146,6 +146,20 @@
 		var/newtext = sanitize(replacetext_char(input(usr, "Editing file '[open_file]'. You may use most tags used in paper formatting:", "Text Editor", oldtext) as message|null, "\n", "\[br\]"), MAX_TEXTFILE_LENGTH)
 		if(!newtext)
 			return
+		//Count the fields
+		var/laststart = 1
+		var/fields
+		while(1)
+			var/i = findtext_char(newtext, "\[field\]", laststart)	//</span>
+			if(i==0)
+				break
+			laststart = i+1
+			fields++
+
+		if(fields > 50)//large amount of fields creates a heavy load on the server, see updateinfolinks() and addtofield()
+			to_chat(usr, "<span class='warning'>Too many fields. Sorry, you can't do this.</span>")
+			return
+
 		loaded_data = newtext
 		is_edited = 1
 		return 1
