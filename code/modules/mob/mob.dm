@@ -718,7 +718,7 @@
 
 /mob/proc/reset_layer()
 	if(lying)
-		plane = LYING_MOB_PLANE
+		plane = DEFAULT_PLANE
 		layer = LYING_MOB_LAYER
 	else
 		reset_plane_and_layer()
@@ -858,7 +858,7 @@
 
 
 
-/mob/proc/get_visible_implants(var/class = 0)
+/mob/proc/get_visible_implants(var/class = 0, include_shrapnel = FALSE)
 	var/list/visible_implants = list()
 	for(var/obj/item/O in embedded)
 		if(O.w_class > class)
