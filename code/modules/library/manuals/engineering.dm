@@ -8,7 +8,7 @@
 	..()
 	dat = {"
 
-		<html><head>
+		<html><meta charset=\"utf-8\"><head>
 		</head>
 
 		<body>
@@ -167,7 +167,7 @@
 				  <li>Package Wrapper</li>
 				  <li>Destination Tagger</li>
 				</ul>
-				
+
 				<h3>Crisis Cyborg</h3>
 				The crisis cyborg module is prepared to handle a variety of non-surgical medical emergencies.<br>A medical cyborg comes with:
 				<ul>
@@ -310,7 +310,7 @@
 	..()
 	dat = {"
 
-		<html><head>
+		<html><meta charset=\"utf-8\"><head>
 		</head>
 
 		<body>
@@ -509,7 +509,7 @@
 	..()
 	dat = {"
 
-		<html><head>
+		<html><meta charset=\"utf-8\"><head>
 		</head>
 
 		<body>

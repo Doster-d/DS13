@@ -5,6 +5,7 @@
 	title = "Cloning Techniques of the 26th Century"
 
 	dat = {"<html>
+				<meta charset=\"utf-8\">
 				<head>
 				<style>
 				h1 {font-size: 21px; margin: 15px 0px 5px;}
@@ -100,6 +101,7 @@
 /obj/item/weapon/book/manual/medical_diagnostics_manual/New()
 	..()
 	dat = {"<html>
+				<meta charset=\"utf-8\">
 				<head>
 				<style>
 				h1 {font-size: 18px; margin: 15px 0px 5px;}

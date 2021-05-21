@@ -468,7 +468,7 @@
 			dat += "<A href='?src=\ref[src];action=detach'>Detach the beaker</a><BR>"
 	else
 		dat += "Please wait..."
-	dat = "<HEAD><TITLE>[name]</TITLE></HEAD><TT>[JOINTEXT(dat)]</TT>"
+	dat = "<meta charset=\"utf-8\"><HEAD><TITLE>[name]</TITLE></HEAD><TT>[JOINTEXT(dat)]</TT>"
 	show_browser(user, strip_improper(dat), "window=reagentgrinder")
 	onclose(user, "reagentgrinder")
 

@@ -408,7 +408,7 @@
 				trialmin = 1 // don't know why we use both of these it's really weird, but I'm 2 lasy to refactor this all to use just admin.
 		voting |= C
 
-		. = "<html><head><title>Voting Panel</title></head><body>"
+		. = "<html><meta charset=\"utf-8\"><head><title>Voting Panel</title></head><body>"
 		if(mode)
 			var/is_transfer = current_vote_type == "crew_transfer"
 			var/no_dead_votes = CONFIG_GET(flag/vote_no_dead_crew_transfer)

@@ -112,7 +112,7 @@
 		..()
 
 /mob/living/bot/medbot/GetInteractTitle()
-	. = "<head><title>Medibot v1.0 controls</title></head>"
+	. = "<meta charset=\"utf-8\"><head><title>Medibot v1.0 controls</title></head>"
 	. += "<b>Automatic Medical Unit v1.0</b>"
 
 /mob/living/bot/medbot/GetInteractStatus()

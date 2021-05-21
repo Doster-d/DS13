@@ -36,7 +36,7 @@
 		icon_state = "floorbot[on]e"
 
 /mob/living/bot/floorbot/GetInteractTitle()
-	. = "<head><title>Repairbot v1.0 controls</title></head>"
+	. = "<meta charset=\"utf-8\"><head><title>Repairbot v1.0 controls</title></head>"
 	. += "<b>Automatic Floor Repairer v1.0</b>"
 
 /mob/living/bot/floorbot/GetInteractStatus()
@@ -275,7 +275,7 @@
 	icon_state = "toolbox_tiles"
 	force = 3.0
 	throwforce = 10.0
-	
+
 	throw_range = 5
 	w_class = ITEM_SIZE_NORMAL
 	var/boxtype = ""
@@ -306,7 +306,7 @@
 	icon_state = "toolbox_tiles_sensor"
 	force = 3.0
 	throwforce = 10.0
-	
+
 	throw_range = 5
 	w_class = ITEM_SIZE_NORMAL
 	var/created_name = "Floorbot"

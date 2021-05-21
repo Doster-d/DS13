@@ -105,7 +105,7 @@
 		icon_state = "cleanbot[on]"
 
 /mob/living/bot/cleanbot/GetInteractTitle()
-	. = "<head><title>Cleanbot controls</title></head>"
+	. = "<meta charset=\"utf-8\"><head><title>Cleanbot controls</title></head>"
 	. += "<b>Automatic Cleaner v1.0</b>"
 
 /mob/living/bot/cleanbot/GetInteractPanel()
@@ -165,7 +165,7 @@
 	icon_state = "bucket_proxy"
 	force = 3.0
 	throwforce = 10.0
-	
+
 	throw_range = 5
 	w_class = ITEM_SIZE_NORMAL
 	var/created_name = "Cleanbot"
