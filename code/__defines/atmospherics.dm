@@ -20,6 +20,11 @@
 #define MIN_TOXIN_DAMAGE 1
 #define MAX_TOXIN_DAMAGE 10
 
+#define BOMBCAP_DVSTN_RADIUS (14/4)
+#define BOMBCAP_HEAVY_RADIUS (14/2)
+#define BOMBCAP_LIGHT_RADIUS 14
+#define BOMBCAP_FLASH_RADIUS (14*1.5)
+
 #define STD_BREATH_VOLUME      12 // Liters in a normal breath.
 
 #define HUMAN_HEAT_CAPACITY 280000 //J/K For 80kg person

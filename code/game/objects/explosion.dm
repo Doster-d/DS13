@@ -121,8 +121,15 @@ proc/explosion_FX(turf/epicenter, max_range, explosion_sound=get_sfx("explosion"
 	ex_act(strength)
 
 /datum/extension/explosion/New(atom/parent, radius, max_power)
-	.=..()
-	explosion(parent, radius, max_power)
+	. = ..()
+	var/devastation_range = round(min(BOMBCAP_DVSTN_RADIUS, radius*0.15))
+	var/heavy_impact_range = round(min(BOMBCAP_HEAVY_RADIUS, radius*0.35))
+	var/light_impact_range = round(min(BOMBCAP_LIGHT_RADIUS, radius*0.80))
+	var/flash_range = round(min(BOMBCAP_FLASH_RADIUS, radius*1.20))
+	var/adminlog = 1
+	var/z_transfer = 1
+	var/shaped = 1
+	simple_explosion(parent, devastation_range, heavy_impact_range, light_impact_range, flash_range, adminlog, z_transfer, shaped)
 
 /datum/explosion_wave
 	var/turf/location = null
